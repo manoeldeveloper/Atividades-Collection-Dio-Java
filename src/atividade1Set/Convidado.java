@@ -18,7 +18,7 @@ public class Convidado {
 	}
 	@Override
 	public String toString() {
-		return "tNome: " + getNome() + ", Id: " + getId();
+		return "Nome: " + getNome() + ", Id: " + getId();
 	}
 	protected Convidado(String nome, int id) {
 		super();

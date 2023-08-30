@@ -70,6 +70,7 @@ public class Principal {
 			}
 		menu();
 	}
+	
 
 	private static void adicionar() {
 			System.out.println("Nome do convidado:\n");
@@ -78,9 +79,22 @@ public class Principal {
 			System.out.println("Id do convite:\n");
 			int id = leia.nextInt();
 			
-			Convidado convidado = new Convidado(nome, id);
-			
-			convidados.add(convidado);
-			menu();
+			 boolean idEmUso = false;
+
+			    for (Convidado c : convidados) {
+			        if (c.getId() == id) {
+			            System.out.println("Esse Id já está em uso!");
+			            idEmUso = true;
+			            break;
+			        }
+			    }
+
+			    if (!idEmUso) {
+			        Convidado convidado = new Convidado(nome, id);
+			        convidados.add(convidado);
+			    }
+		menu();
+
+			}
 	}
-}
+
